@@ -1,0 +1,16 @@
+{
+  "name": "model",
+  "version": "1.0.0",
+  "description": "model download service",
+  "main": "model-app.js",
+  "scripts": {
+    "test": "node model-app.js"
+  },
+  "author": "Yichen Mo",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0",
+    "mime": "^2.4.6"
+  }
+}

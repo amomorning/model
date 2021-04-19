@@ -43,20 +43,19 @@ app.use(router.routes());
 
 const PORT = 19810;
 
-// https
+//http
+const options = {
+    key: fs.readFileSync("/home/cert/5508734_model.archialgo.com.key", "utf8"),
+    cert: fs.readFileSync("/home/cert/5508734_model.archialgo.com.pem", "utf8")
+};
 
-// const options = {
-//     key: fs.readFileSync("/home/cert/4528032_aam.archialgo.com.key", "utf8"),
-//     cert: fs.readFileSync("/home/cert/4528032_aam.archialgo.com.pem", "utf8")
-// };
-
-// const https = require('https').createServer(options, app.callback());
-// https.listen(PORT+1, () => {
-//     console.log("listening on *:19811")
-// });
-
-// http
-const http = require('http').createServer(app.callback());
-http.listen(PORT, () => {
-    console.log("listening on http//localhost:19810")
+const https = require('https').createServer(options, app.callback());
+https.listen(PORT, () => {
+    console.log("listening on *:19810")
 });
+
+// // http
+// const http = require('http').createServer(app.callback());
+// http.listen(PORT, () => {
+//     console.log("listening on http//localhost:19810")
+// });
